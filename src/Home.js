@@ -42,7 +42,16 @@ function Home() {
       <motion.p variants={variants} animate="pStyle">
         Hello World
       </motion.p>
-      <button onClick={() => setX()}>button</button>
+      <motion.button onClick={() => setX()}>button</motion.button>
+      <motion.div
+        drag
+        dragElastic={0.2}
+        layout
+        onDrag={(event, info) => {
+          console.log(event);
+        }}
+        animate={{ backgroundColor: "blue", height: 10, width: 10 }}
+      ></motion.div>
     </>
   );
 }
